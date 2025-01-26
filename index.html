@@ -4,10 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container mx-auto">
-        <h1 class="text-4xl font-bold text-center mt-10">Hello, Tailwind CSS!</h1>
+<body class="h-screen w-screen flex items-center justify-center">
+    <div class="grid grid-cols-3 grid-rows-2 gap-4 w-full h-full p-4">
+        <!-- Main Weather Card - Current Temperature and Conditions -->
+        <div class="bg-cover bg-center shadow-md rounded-2xl p-6 flex flex-col justify-between" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)), url('./images/sunny.webp');">
+            <span class="font-sans font-medium text-4xl text-gray-700">Weather</span>
+            <!-- Temperature and Weather Description -->
+            <div class="flex flex-col justify-center h-full">
+                <span class="font-sans font-semibold text-gray-700 text-7xl">70°F</span>
+                <span class="font-sans font-normal text-xl mt-2 text-gray-700">Partly Cloudy</span>
+            </div>
+            <!-- Weather Metrics Cards -->
+            <div class="flex justify-between mt-4 gap-4">
+                <!-- Pressure Info Card -->
+                <div class="rounded-2xl p-3 flex-1 flex flex-col items-center bg-blue-900/85">
+                    <span class="text-sm text-white">Pressure</span>
+                    <span class="text-lg font-bold text-white">800mb</span>
+                </div>
+                <!-- Visibility Info Card -->
+                <div class="rounded-2xl p-3 flex-1 flex flex-col items-center bg-green-200/85">
+                    <span class="text-sm text-gray-700">Visibility</span>
+                    <span class="text-lg font-bold text-gray-700">3 miles</span>
+                </div>
+                <!-- Humidity Info Card -->
+                <div class="rounded-2xl p-3 flex-1 flex flex-col items-center bg-white/86">
+                    <span class="text-sm text-gray-700">Humidity</span>
+                    <span class="text-lg font-bold text-gray-700">87%</span>
+                </div>
+            </div>
+        </div>
+        <!-- Air Quality Index Card -->
+        <div class="bg-cover bg-center shadow-md rounded-2xl p-6 flex flex-col justify-between" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)), url('./images/aqi.webp');">
+            <span class="font-sans font-medium text-4xl text-gray-700">Air Quality</span>
+            <!-- Temperature and Weather Description -->
+            <div class="flex flex-col justify-center h-full">
+                <span class="font-sans font-semibold text-gray-600 text-7xl">390 AQI</span>
+            </div>
+            <!-- AirQuality Metrics Cards -->
+            <div class="flex justify-between mt-4 gap-4">
+                <!-- AirQuality Info Card -->
+                <div class="rounded-2xl p-3 flex-1 flex flex-col items-center bg-white">
+                    <div class="flex justify-between w-full px-4 relative">
+                        <span class="text-gray-500 font-medium">Bad</span>
+                        <span class="tooltip bg-blue-900 text-white font-medium px-4 py-2 rounded-lg">
+                            Normal
+                        </span>
+                        <span class="text-gray-500 font-medium">Good</span>
+                    </div>
+                    <div class="progress-bar w-full h-2 mt-4 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+        <!-- UVI Information Card -->
+        <div class="bg-cover bg-center shadow-md rounded-2xl p-6 flex flex-col justify-between" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)), url('./images/ultraviolet.webp');">
+            <span class="font-sans font-medium text-4xl text-gray-700">UV Index</span>
+            <div class="flex flex-col justify-center h-full">
+                <span class="font-sans font-semibold text-gray-600 text-7xl">20 UVI</span>
+                <span class="font-sans font-normal text-xl mt-2 text-gray-600">Moderate risk from UV radiation</span>
+            </div>
+            <div class="bg-blue-900/85 rounded-2xl px-7 py-4 flex justify-center items-center mt-4 w-fit mx-auto gap-2">
+                <span class="text-yellow-300 text-5xl">☀</span>
+                <span class="font-bold tracking-wider text-2xl text-white">MODERATE</span>
+            </div>
+        </div>
+        <!-- Combined Precipitation & UV Index Card -->
+        <div class="col-span-2 bg-gradient-to-r from-yellow-200 to-purple-200 shadow-md rounded-2xl p-6 flex items-center justify-center">
+            Combined Card
+        </div>
+        <!-- Air Quality Card -->
+        <div class="bg-pink-200 shadow-md rounded-2xl p-6 flex items-center justify-center">Card 6</div>
     </div>
 </body>
 </html>
